@@ -1,0 +1,17 @@
+The solution involves ensuring the specificity of the selector `div p` is sufficient to override the other rules, such as:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green !important; /* Force the rule to take precedence */
+}
+```
+
+Using the `!important` flag is usually not recommended as a regular practice, but in rare cases like this where the specificity and inheritance seems to be not applied correctly in the browser, it forces the rule to be applied. Alternatively, consider restructuring your CSS rules or selectors to avoid these complex interactions, ensuring higher specificity for the intended styling.  Thoroughly test your CSS across different browsers to ensure consistent rendering.
